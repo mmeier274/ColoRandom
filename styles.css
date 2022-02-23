@@ -1,0 +1,59 @@
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* overflow: auto; */
+}
+
+.square-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+h1 {
+  border: 2px solid brown;
+}
+
+.color-swatch {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+  border: 2px solid red
+}
+
+.square-box {
+  width: 75%;
+  border: 2px solid blue
+}
+
+.rectangle-box {
+  display: flex;
+  flex-direction: column;
+  width: 25%;
+  /* border: 2px solid orange */
+}
+
+.color-array {
+  /* border: 2px solid green; */
+}
+
+.button-box {
+  border: 2px solid green;
+}
+
+/* ***INDIVIDUAL BOXES*** */
+.color {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
