@@ -1,0 +1,97 @@
+body {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* overflow: auto; */
+}
+
+.square-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 25%
+}
+
+h1 {
+  border: 2px solid brown;
+  font-size: 40px;
+}
+
+.color-swatch {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 50%;
+  border: 2px solid red
+}
+
+.square-box {
+  width: 75%;
+  border: 2px solid blue
+}
+
+.rectangle-box {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: stretch;
+  width: 25%;
+  /* border: 2px solid orange */
+}
+
+.rectangle-title {
+  border: 2px solid green;
+  width: 100%;
+  height: 15%;
+  margin-bottom: : 10px;
+  display: flex;
+  justify-content: center
+}
+
+.color-array {
+  border: 2px solid green;
+  height: 85%;
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center
+}
+
+.button-box {
+  border: 2px solid green;
+  height: 25%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  align-content: space-between
+}
+.new-pal-btn {
+  border-color: black;
+  border-radius: 12;
+  padding: 10px 24px;
+  background-color: white
+}
+
+.save-pal-btn {
+  border-color: black;
+  border-radius: 12;
+  padding: 10px 24px;
+  background-color: white
+}
+
+/* ***INDIVIDUAL BOXES*** */
+.color {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch;
+}
