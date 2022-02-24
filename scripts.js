@@ -1,6 +1,8 @@
 var hexCodeArray = ['A','B','C','D','E','F','0','1',
 '2','3','4','5','6','7','8','9']
 
+var color1 = document.querySelector('#color1');
+
 class ColorArray {
   constructor(array) {
     this.ranHexCode = [];
@@ -45,6 +47,7 @@ function getRandomIndex(hexCodeArray) {
 window.addEventListener('load', function() {
   randomizeHex();
   changeHex();
+  insertColor();
 })
 
 function randomizeHex() {
@@ -61,6 +64,15 @@ function changeHex() {
   test3.innerText = `#${three}`
   test4.innerText = `#${four}`
   test5.innerText = `#${five}`
+
 }
-// randomizeHex()
-// changeHex()
+
+function insertColor() {
+  color1.style.backgroundColor = test.innerText;
+  color2.style.backgroundColor = test2.innerText
+  color3.style.backgroundColor = test3.innerText
+  color4.style.backgroundColor = test4.innerText
+  color5.style.backgroundColor = test5.innerText
+}
+// var color1 = document.querySelector('#color1');
+// color1.style.backgroundColor = test.innerText
