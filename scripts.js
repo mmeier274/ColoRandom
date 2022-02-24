@@ -45,6 +45,9 @@ function getRandomIndex(hexCodeArray) {
 
 window.addEventListener('load',function() {
  var loadPalette = new Palette;
+ loadPalette.accessColor()
+ loadPalette.addHastag()
+ loadPalette.color1 = color1.style.backgroundColor
   console.log(loadPalette)
   // randomizeHex();
   // changeHex();
@@ -82,7 +85,7 @@ function insertColor() {
 // We need to create an object instance. Each instance of the palette should have 5 colors
 class Palette {
   constructor() {
-    this.color1 = ''
+    this.color1 = color1
     this.color2 = color2
     this.color3 = color3
     this.color4 = color4
@@ -99,6 +102,7 @@ class Palette {
 
     newColorArray.randomHex()
     this.color1 = newColorArray.ranHexCode
+
     console.log(this.color1)
 
     newColorArray2.randomHex()
@@ -117,16 +121,13 @@ class Palette {
     this.color5 = newColorArray5.ranHexCode
     console.log(this.color5)
   }
-    // generateId() {
-    //   var newColorArray = new ColorArray
-    //
-    //   function randomizeHex() {
-    //     one = newColorArray.ranHexCode
-    //     two = newColorArray2.ranHexCode
-    //     three = newColorArray3.ranHexCode
-    //     four = newColorArray4.ranHexCode
-    //     five = newColorArray5.ranHexCode
-    //   }
+  addHastag() {
+    this.color1 = `#${this.color1}`
+    console.log(this.color1)
+  }
+  insertColor() {
+    thiscolor1.style.backgroundColor = test.innerText;
+
 }
 var uniqueID;
  function uniqueId() {
@@ -134,13 +135,6 @@ var uniqueID;
 }
 paletteId = uniqueId()
 
-// randomId() {
-//   return Math.floor((Math.random() * 1000) + 1)
-// }
- // this.uniqueId = randomId()
-
-
-var newPalette = new Palette
-var newPalette2 = new Palette
- console.log(newPalette.color1)
-// newPalette.color.push()
+// var newPalette1 = new Palette
+// newPalette1.accessColor()
+// console.log(newPalette1)
