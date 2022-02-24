@@ -31,12 +31,6 @@ var newColorArray3 = new ColorArray
 var newColorArray4 = new ColorArray
 var newColorArray5 = new ColorArray
 
-// newColorArray.randomHex()
-// newColorArray2.randomHex()
-// newColorArray3.randomHex()
-// newColorArray4.randomHex()
-// newColorArray5.randomHex()
-
 var test = document.querySelector('.hex1')
 var test2 = document.querySelector('.hex2')
 var test3 = document.querySelector('.hex3')
@@ -48,11 +42,6 @@ function getRandomIndex(hexCodeArray) {
 }
 
 window.addEventListener('load',function() {
- // var loadPalette = new Palette;
- // loadPalette.accessColor()
- // loadPalette.addHastag()
- // color1.style.backgroundColor = loadPalette.color1
- // test.innerText = loadPalette.color1
  testFunction()
 })
 
@@ -86,7 +75,6 @@ function changeHex() {
   test3.innerText = `#${three}`
   test4.innerText = `#${four}`
   test5.innerText = `#${five}`
-
 }
 
 function insertColor() {
@@ -96,11 +84,7 @@ function insertColor() {
   color4.style.backgroundColor = test4.innerText;
   color5.style.backgroundColor = test5.innerText
 }
-// var color1 = document.querySelector('#color1');
-// color1.style.backgroundColor = test.innerText
 
-// ***** Creating a Palette Class ***** //
-// We need to create an object instance. Each instance of the palette should have 5 colors
 function uniqueId() {
   return Math.floor((Math.random() * 1000) + 1)
 }
@@ -144,14 +128,5 @@ class Palette {
     this.color3 = `#${this.color3}`
     this.color4 = `#${this.color4}`
     this.color5 = `#${this.color5}`
-    // console.log(this.color1)
   }
 }
-
-
-
-
-
-// var newPalette1 = new Palette
-// newPalette1.accessColor()
-// console.log(newPalette1)
