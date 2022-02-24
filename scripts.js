@@ -2,6 +2,10 @@ var hexCodeArray = ['A','B','C','D','E','F','0','1',
 '2','3','4','5','6','7','8','9']
 
 var color1 = document.querySelector('#color1');
+var color2 = document.querySelector('#color2');
+var color3 = document.querySelector('#color3');
+var color4 = document.querySelector('#color4');
+var color5 = document.querySelector('#color5');
 
 class ColorArray {
   constructor() {
@@ -20,18 +24,18 @@ class ColorArray {
     this.ranHexCode = hexcode.join('')
   }
 }
-//
+
 var newColorArray = new ColorArray
 var newColorArray2 = new ColorArray
 var newColorArray3 = new ColorArray
 var newColorArray4 = new ColorArray
 var newColorArray5 = new ColorArray
 
-newColorArray.randomHex()
-newColorArray2.randomHex()
-newColorArray3.randomHex()
-newColorArray4.randomHex()
-newColorArray5.randomHex()
+// newColorArray.randomHex()
+// newColorArray2.randomHex()
+// newColorArray3.randomHex()
+// newColorArray4.randomHex()
+// newColorArray5.randomHex()
 
 var test = document.querySelector('.hex1')
 var test2 = document.querySelector('.hex2')
@@ -44,15 +48,29 @@ function getRandomIndex(hexCodeArray) {
 }
 
 window.addEventListener('load',function() {
- var loadPalette = new Palette;
- loadPalette.accessColor()
- loadPalette.addHastag()
- loadPalette.color1 = color1.style.backgroundColor
-  console.log(loadPalette)
-  // randomizeHex();
-  // changeHex();
-  // insertColor();
+ // var loadPalette = new Palette;
+ // loadPalette.accessColor()
+ // loadPalette.addHastag()
+ // color1.style.backgroundColor = loadPalette.color1
+ // test.innerText = loadPalette.color1
+ testFunction()
 })
+
+function testFunction() {
+var loadPalette = new Palette;
+loadPalette.accessColor()
+loadPalette.addHastag()
+color1.style.backgroundColor = loadPalette.color1
+color2.style.backgroundColor = loadPalette.color2
+color3.style.backgroundColor = loadPalette.color3
+color4.style.backgroundColor = loadPalette.color4
+color5.style.backgroundColor = loadPalette.color5
+test.innerText = loadPalette.color1
+test2.innerText = loadPalette.color2
+test3.innerText = loadPalette.color3
+test4.innerText = loadPalette.color4
+test5.innerText = loadPalette.color5
+}
 
 function randomizeHex() {
   one = newColorArray.ranHexCode
@@ -83,6 +101,11 @@ function insertColor() {
 
 // ***** Creating a Palette Class ***** //
 // We need to create an object instance. Each instance of the palette should have 5 colors
+function uniqueId() {
+  return Math.floor((Math.random() * 1000) + 1)
+}
+var palleteId;
+paletteId = uniqueId()
 class Palette {
   constructor() {
     this.color1 = color1
@@ -103,37 +126,31 @@ class Palette {
     newColorArray.randomHex()
     this.color1 = newColorArray.ranHexCode
 
-    console.log(this.color1)
-
     newColorArray2.randomHex()
     this.color2 = newColorArray2.ranHexCode
-    console.log(this.color2)
 
     newColorArray3.randomHex()
     this.color3 = newColorArray3.ranHexCode
-    console.log(this.color3)
 
     newColorArray4.randomHex()
     this.color4 = newColorArray4.ranHexCode
-    console.log(this.color4)
 
     newColorArray5.randomHex()
     this.color5 = newColorArray5.ranHexCode
-    console.log(this.color5)
   }
   addHastag() {
     this.color1 = `#${this.color1}`
-    console.log(this.color1)
+    this.color2 = `#${this.color2}`
+    this.color3 = `#${this.color3}`
+    this.color4 = `#${this.color4}`
+    this.color5 = `#${this.color5}`
+    // console.log(this.color1)
   }
-  insertColor() {
-    thiscolor1.style.backgroundColor = test.innerText;
+}
 
-}
-var uniqueID;
- function uniqueId() {
-  return Math.floor((Math.random() * 1000) + 1)
-}
-paletteId = uniqueId()
+
+
+
 
 // var newPalette1 = new Palette
 // newPalette1.accessColor()
