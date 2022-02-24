@@ -4,7 +4,7 @@ var hexCodeArray = ['A','B','C','D','E','F','0','1',
 var color1 = document.querySelector('#color1');
 
 class ColorArray {
-  constructor(array) {
+  constructor() {
     this.ranHexCode = [];
     this.counter = 0;
     this.locked = false;
@@ -18,7 +18,6 @@ class ColorArray {
       hexcode.push(array)
     }
     this.ranHexCode = hexcode.join('')
-    console.log(this.ranHexCode)
   }
 }
 //
@@ -76,3 +75,40 @@ function insertColor() {
 }
 // var color1 = document.querySelector('#color1');
 // color1.style.backgroundColor = test.innerText
+
+// ***** Creating a Palette Class ***** //
+// We need to create an object instance. Each instance of the palette should have 5 colors
+class Palette {
+  constructor() {
+    this.color = [];
+    this.uniqueId = uniqueId()
+  }
+  uniqueId() {
+    return Math.floor((Math.random() * 1000) + 1)
+  }
+    // generateId() {
+    //   var newColorArray = new ColorArray
+    //
+    //   function randomizeHex() {
+    //     one = newColorArray.ranHexCode
+    //     two = newColorArray2.ranHexCode
+    //     three = newColorArray3.ranHexCode
+    //     four = newColorArray4.ranHexCode
+    //     five = newColorArray5.ranHexCode
+    //   }
+    uniqueID() {
+return Math.floor(Math.random() * Date.now())
+}
+  }
+var uniqueID;
+
+// randomId() {
+//   return Math.floor((Math.random() * 1000) + 1)
+// }
+ // this.uniqueId = randomId()
+
+ 
+var newPalette = new Palette
+var newPalette2 = new Palette
+ console.log(newPalette)
+// newPalette.color.push()
