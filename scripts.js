@@ -3,48 +3,64 @@ var hexCodeArray = ['A','B','C','D','E','F','0','1',
 
 class ColorArray {
   constructor(array) {
-    this.ranHexCode = []
-    this.counter = 0
+    this.ranHexCode = [];
+    this.counter = 0;
+    this.locked = false;
   }
   randomHex() {
-    for (var i = 0; this.counter < 6; i++) {
+    var array = []
+    var hexcode = []
+    for (var i = 0; hexcode.length < 6; i++) {
       this.counter ++
-      var array = []
-      var newHexCode = hexCodeArray[getRandomIndex(hexCodeArray)]
-      array.push(newHexCode)
-      var realArray = array.join('')
-      this.ranHexCode.push(realArray[5])
-      console.log(newHexCode)
+      array = hexCodeArray[getRandomIndex(hexCodeArray)]
+      hexcode.push(array)
     }
-    return randomHex()
+    this.ranHexCode = hexcode.join('')
+    console.log(this.ranHexCode)
   }
 }
 //
 var newColorArray = new ColorArray
+var newColorArray2 = new ColorArray
+var newColorArray3 = new ColorArray
+var newColorArray4 = new ColorArray
+var newColorArray5 = new ColorArray
+
 newColorArray.randomHex()
-console.log(newColorArray)
+newColorArray2.randomHex()
+newColorArray3.randomHex()
+newColorArray4.randomHex()
+newColorArray5.randomHex()
 
-
-// }
-var hexCode = []
-
-var array = []
-var counter = 0
-function randomHex() {
-  for (var i = 0; counter < 6; i++) {
-    counter ++
-    var random = hexCodeArray[getRandomIndex(hexCodeArray)]
-    array.push(random)
-    var realArray = array.join('')
-    hexCode.push(realArray)
-    console.log(hexCode[5])
-  }
-}
-
+var test = document.querySelector('.hex1')
+var test2 = document.querySelector('.hex2')
+var test3 = document.querySelector('.hex3')
+var test4 = document.querySelector('.hex4')
+var test5 = document.querySelector('.hex5')
 
 function getRandomIndex(hexCodeArray) {
   return Math.floor(Math.random() * hexCodeArray.length);
 }
 
+window.addEventListener('load', function() {
+  randomizeHex();
+  changeHex();
+})
 
-//randomize index
+function randomizeHex() {
+  one = newColorArray.ranHexCode
+  two = newColorArray2.ranHexCode
+  three = newColorArray3.ranHexCode
+  four = newColorArray4.ranHexCode
+  five = newColorArray5.ranHexCode
+}
+
+function changeHex() {
+  test.innerText = `#${one}`
+  test2.innerText = `#${two}`
+  test3.innerText = `#${three}`
+  test4.innerText = `#${four}`
+  test5.innerText = `#${five}`
+}
+// randomizeHex()
+// changeHex()
