@@ -19,11 +19,18 @@ var lockBtn3 = document.querySelector('.lock3');
 var lockBtn4 = document.querySelector('.lock4');
 var lockBtn5 = document.querySelector('.lock5');
 var newPaletteBtn = document.querySelector('.new-pal-btn')
+var fiveHexCodes = [];
 
 window.addEventListener('load',function() {
  testFunction(loadPalette)
  changeHex(loadPalette)
  background(loadPalette)
+})
+
+newPaletteBtn.addEventListener('click', function() {
+  testFunction(loadPalette)
+  changeHex(loadPalette)
+  background(loadPalette)
 })
 
 var itemInput = document.querySelector('.color-swatch')
@@ -34,11 +41,6 @@ itemInput.addEventListener('click', clickEvent3);
 itemInput.addEventListener('click', clickEvent4);
 itemInput.addEventListener('click', clickEvent5);
 
-
-// function clickEvent(event) {
-//   mouseClick = event.target.className
-//   console.log(mouseClick)
-// }
 var box2Lock = [
   'lock lock2',
   'unlock unlock2',
@@ -123,74 +125,12 @@ var box5Lock = [
   }
 }
 }
-
-
-// unlockBtn1.addEventListener('click', function() {
-//   lock(lockBtn1, unlockBtn1)
-// })
-//
-// lockBtn1.addEventListener('click', function() {
-//   unlock(lockBtn1, unlockBtn1)
-// })
-//
-// unlockBtn2.addEventListener('click', function() {
-//   lock(lockBtn2, unlockBtn2)
-// })
-//
-// lockBtn2.addEventListener('click', function() {
-//   unlock(lockBtn2, unlockBtn2)
-// })
-//
-// unlockBtn3.addEventListener('click', function() {
-//   lock(lockBtn3, unlockBtn3)
-// })
-//
-// lockBtn3.addEventListener('click', function() {
-//   unlock(lockBtn3, unlockBtn3)
-// })
-//
-// unlockBtn4.addEventListener('click', function() {
-//   lock(lockBtn4, unlockBtn4)
-// })
-//
-// lockBtn4.addEventListener('click', function() {
-//   unlock(lockBtn4, unlockBtn4)
-// })
-//
-// unlockBtn5.addEventListener('click', function() {
-//   lock(lockBtn5, unlockBtn5)
-// })
-//
-// lockBtn5.addEventListener('click', function() {
-//   unlock(lockBtn5, unlockBtn5)
-// })
-
-function lock(lockElement, unlockElement) {
-  if(lockElement.style.display === 'none'){
-    lockElement.style.display = 'block';
-    unlockElement.style.display = 'none'
-  } else {
-    lockElement.style.display = 'none';
-  }
-}
-
-function unlock(lockElement, unlockElement) {
-  if(unlockElement.style.display === 'none'){
-    unlockElement.style.display = 'block';
-    lockElement.style.display = 'none'
-  } else {
-    unlockElement.style.display = 'none';
-  }
-}
-
-  // for (var i=0; i < unlockBtn.length; i++) {
-  //   unlockBtn[i].addEventListener('click', function() {
-  //     console.log(this.className)
-  //     if (this.className[i] === 'unlock') {
-  //       this.className[i].add('hidden')
-  //     }
-  //   })
-  // }
+fiveHexCodes.push(newColorArray)
+fiveHexCodes.push(newColorArray2)
+fiveHexCodes.push(newColorArray3)
+fiveHexCodes.push(newColorArray4)
+fiveHexCodes.push(newColorArray5)
+console.log(fiveHexCodes);
 
 function hide(element) {
   element.classList.add('hidden')

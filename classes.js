@@ -25,6 +25,12 @@ function uniqueId() {
 var palleteId;
 paletteId = uniqueId()
 
+var newColorArray = new ColorArray
+var newColorArray2 = new ColorArray
+var newColorArray3 = new ColorArray
+var newColorArray4 = new ColorArray
+var newColorArray5 = new ColorArray
+
 class Palette {
   constructor() {
     this.color1 = color1
@@ -36,11 +42,6 @@ class Palette {
     this.uniqueId = paletteId
   }
   accessColor() {
-    var newColorArray = new ColorArray
-    var newColorArray2 = new ColorArray
-    var newColorArray3 = new ColorArray
-    var newColorArray4 = new ColorArray
-    var newColorArray5 = new ColorArray
 
     newColorArray.randomHex()
     this.color1 = newColorArray.ranHexCode
