@@ -15,15 +15,9 @@ class ColorArray {
       array = hexCodeArray[getRandomIndex(hexCodeArray)]
       hexcode.push(array)
     }
-    this.ranHexCode = hexcode.join('')
+    this.ranHexCode = `#${hexcode.join('')}`
   }
 }
-
-var newColorArray = new ColorArray
-var newColorArray2 = new ColorArray
-var newColorArray3 = new ColorArray
-var newColorArray4 = new ColorArray
-var newColorArray5 = new ColorArray
 
 function uniqueId() {
   return Math.floor((Math.random() * 1000) + 1)
@@ -62,13 +56,6 @@ class Palette {
 
     newColorArray5.randomHex()
     this.color5 = newColorArray5.ranHexCode
-  }
-  addHastag() {
-    this.color1 = `#${this.color1}`
-    this.color2 = `#${this.color2}`
-    this.color3 = `#${this.color3}`
-    this.color4 = `#${this.color4}`
-    this.color5 = `#${this.color5}`
   }
 }
 
