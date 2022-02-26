@@ -4,7 +4,6 @@ var hexCodeArray = ['A','B','C','D','E','F','0','1',
 
 
 
-
 var currentPalette = new Palette;
 var newPalette = new Palette
 var newColorArray = new Color

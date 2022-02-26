@@ -33,6 +33,13 @@ function displayNewColors() {
   currentPalette.accessColor()
   changeHex(currentPalette)
   background(currentPalette)
+
+  function checkLockPostion() {
+    for (var i = 0; i <= 4; i++)
+    if (currentPalette.lockCheck[i] === false) {
+
+    }
+  }
 }
 
 var box2Lock = [
