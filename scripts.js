@@ -19,28 +19,21 @@ var lockBtn3 = document.querySelector('.lock3');
 var lockBtn4 = document.querySelector('.lock4');
 var lockBtn5 = document.querySelector('.lock5');
 var newPaletteBtn = document.querySelector('.new-pal-btn')
-
-window.addEventListener('load',function() {
- testFunction(currentPalette)
- changeHex(currentPalette)
- background(currentPalette)
-})
-
-newPaletteBtn.addEventListener('click', function() {
-  testFunction(currentPalette)
-  changeHex(currentPalette)
-  background(currentPalette)
-})
-
 var itemInput = document.querySelector('.color-swatch')
 
+window.addEventListener('load', displayNewColors)
+newPaletteBtn.addEventListener('click', displayNewColors)
 itemInput.addEventListener('click', clickEvent1);
 itemInput.addEventListener('click', clickEvent2);
 itemInput.addEventListener('click', clickEvent3);
 itemInput.addEventListener('click', clickEvent4);
 itemInput.addEventListener('click', clickEvent5);
 
-
+function displayNewColors() {
+  testFunction(currentPalette)
+  changeHex(currentPalette)
+  background(currentPalette)
+}
 
 var box2Lock = [
   'lock lock2',
@@ -52,11 +45,11 @@ var box2Lock = [
 function clickEvent2(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box2Lock.length; i++) {
-  if (mouseClick === box2Lock[i]) {
-    lockBtn2.classList.remove('hidden')
-    unlockBtn2.classList.add('hidden')
+    if (mouseClick === box2Lock[i]) {
+      lockBtn2.classList.remove('hidden')
+      unlockBtn2.classList.add('hidden')
+    }
   }
-}
 }
 
 var box1Lock = [
@@ -69,11 +62,11 @@ var box1Lock = [
 function clickEvent1(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box1Lock.length; i++) {
-  if (mouseClick === box1Lock[i]) {
-    lockBtn1.classList.remove('hidden')
-    unlockBtn1.classList.add('hidden')
+    if (mouseClick === box1Lock[i]) {
+      lockBtn1.classList.remove('hidden')
+      unlockBtn1.classList.add('hidden')
+    }
   }
-}
 }
 
 var box3Lock = [
@@ -86,11 +79,11 @@ var box3Lock = [
 function clickEvent3(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box3Lock.length; i++) {
-  if (mouseClick === box3Lock[i]) {
-    lockBtn3.classList.remove('hidden')
-    unlockBtn3.classList.add('hidden')
+    if (mouseClick === box3Lock[i]) {
+      lockBtn3.classList.remove('hidden')
+      unlockBtn3.classList.add('hidden')
+    }
   }
-}
 }
 
 var box4Lock = [
@@ -103,11 +96,11 @@ var box4Lock = [
 function clickEvent4(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box4Lock.length; i++) {
-  if (mouseClick === box4Lock[i]) {
-    lockBtn4.classList.remove('hidden')
-    unlockBtn4.classList.add('hidden')
+    if (mouseClick === box4Lock[i]) {
+      lockBtn4.classList.remove('hidden')
+      unlockBtn4.classList.add('hidden')
+    }
   }
-}
 }
 
 var box5Lock = [
@@ -117,14 +110,14 @@ var box5Lock = [
   'color color5'
 ]
 
- function clickEvent5(event) {
+function clickEvent5(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box5Lock.length; i++) {
-  if (mouseClick === box5Lock[i]) {
-    lockBtn5.classList.remove('hidden')
-    unlockBtn5.classList.add('hidden')
+    if (mouseClick === box5Lock[i]) {
+      lockBtn5.classList.remove('hidden')
+      unlockBtn5.classList.add('hidden')
+    }
   }
-}
 }
 
 function hide(element1) {
@@ -140,7 +133,7 @@ function getRandomIndex(hexCodeArray) {
 }
 
 function testFunction(element, string) {
-element.accessColor(string)
+  element.accessColor(string)
 }
 
 function changeHex(element) {
