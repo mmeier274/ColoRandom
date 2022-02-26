@@ -1,7 +1,7 @@
 class Palette {
   constructor() {
     this.colorPalette =[]
-    this.uniqueId = paletteId
+    this.uniqueId = Date.now()
   }
   accessColor() {
     var testColorArray = new Color
