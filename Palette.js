@@ -1,16 +1,21 @@
 class Palette {
   constructor() {
     this.colorPalette =[]
-    this.lockCheck = []
     this.uniqueId = Date.now()
   }
 
   accessColor() {
-    this.colorPalette = []
-  for (var i = 0; i <= 4; i++) {
-    var testColorArray = new Color
-    testColorArray.randomHex()
-    this.colorPalette.push(testColorArray)
+    console.log(this.colorPalette)
+    if (!this.colorPalette[0]) {
+      for (var i = 0; i <= 4; i++) {
+        this.colorPalette.push(new Color)
+      }
+    }
+      for (var i = 0; i <= 4; i++) {
+        if (this.colorPalette[i].locked === false) {
+        this.colorPalette.splice(i,1,new Color)
+      }
+
+    }
   }
-}
 }
