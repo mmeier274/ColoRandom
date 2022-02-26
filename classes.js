@@ -1,13 +1,13 @@
 var hexCodeArray = ['A','B','C','D','E','F','0','1',
 '2','3','4','5','6','7','8','9']
 
-class ColorArray {
+class Color {
   constructor() {
     this.ranHexCode = [];
     this.counter = 0;
     this.locked = false;
   }
-  randomHex() {
+  randomHex(close) {
     var array = []
     var hexcode = []
     for (var i = 0; hexcode.length < 6; i++) {
@@ -25,19 +25,21 @@ function uniqueId() {
 var palleteId;
 paletteId = uniqueId()
 
-var newColorArray = new ColorArray
+var newColorArray = new Color
 
 class Palette {
   constructor() {
     this.colorPalette =[]
     this.uniqueId = paletteId
   }
-  accessColor() {
+  accessColor(argu) {
+    var testColorArray = new Color
+    this.colorPalette = []
   for (var i = 0; i <= 4; i++) {
-    var newColorArray = new ColorArray
-    newColorArray.randomHex()
-    this.colorPalette.push(newColorArray.ranHexCode)
+    testColorArray.randomHex(argu)
+    this.colorPalette.push(testColorArray.ranHexCode)
   }
 }
 }
 var loadPalette = new Palette;
+var newPalette = new Palette
