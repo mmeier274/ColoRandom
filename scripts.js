@@ -22,7 +22,7 @@ var newPaletteBtn = document.querySelector('.new-pal-btn')
 var fiveHexCodes = [];
 
 window.addEventListener('load',function() {
- testFunction(loadPalette)
+ testFunction(loadPalette, 'defaultLoad')
  changeHex(loadPalette)
  background(loadPalette)
 })
@@ -140,9 +140,8 @@ function getRandomIndex(hexCodeArray) {
   return Math.floor(Math.random() * hexCodeArray.length);
 }
 
-function testFunction(element) {
-element.accessColor()
-
+function testFunction(element, string) {
+element.accessColor(string)
 }
 
 function changeHex(element) {
