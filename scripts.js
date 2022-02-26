@@ -23,11 +23,11 @@ var itemInput = document.querySelector('.color-swatch')
 
 window.addEventListener('load', displayNewColors)
 newPaletteBtn.addEventListener('click', displayNewColors)
-itemInput.addEventListener('click', clickEvent1);
-itemInput.addEventListener('click', clickEvent2);
-itemInput.addEventListener('click', clickEvent3);
-itemInput.addEventListener('click', clickEvent4);
-itemInput.addEventListener('click', clickEvent5);
+itemInput.addEventListener('click', toggleLock);
+itemInput.addEventListener('click', toggleLock2);
+itemInput.addEventListener('click', toggleLock3);
+itemInput.addEventListener('click', toggleLock4);
+itemInput.addEventListener('click', toggleLock5);
 
 function displayNewColors() {
   currentPalette.accessColor()
@@ -42,7 +42,7 @@ var box2Lock = [
   'color color2'
 ]
 
-function clickEvent2(event) {
+function toggleLock2(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box2Lock.length; i++) {
     if (mouseClick === box2Lock[i]) {
@@ -59,7 +59,7 @@ var box1Lock = [
   'color color1'
 ]
 
-function clickEvent1(event) {
+function toggleLock(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box1Lock.length; i++) {
     if (mouseClick === box1Lock[i]) {
@@ -76,7 +76,7 @@ var box3Lock = [
   'color color3'
 ]
 
-function clickEvent3(event) {
+function toggleLock3(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box3Lock.length; i++) {
     if (mouseClick === box3Lock[i]) {
@@ -93,7 +93,7 @@ var box4Lock = [
   'color color4'
 ]
 
-function clickEvent4(event) {
+function toggleLock4(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box4Lock.length; i++) {
     if (mouseClick === box4Lock[i]) {
@@ -110,7 +110,7 @@ var box5Lock = [
   'color color5'
 ]
 
-function clickEvent5(event) {
+function toggleLock5(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box5Lock.length; i++) {
     if (mouseClick === box5Lock[i]) {
