@@ -19,18 +19,17 @@ var lockBtn3 = document.querySelector('.lock3');
 var lockBtn4 = document.querySelector('.lock4');
 var lockBtn5 = document.querySelector('.lock5');
 var newPaletteBtn = document.querySelector('.new-pal-btn')
-var fiveHexCodes = [];
 
 window.addEventListener('load',function() {
- testFunction(loadPalette, 'defaultLoad')
- changeHex(loadPalette)
- background(loadPalette)
+ testFunction(currentPalette)
+ changeHex(currentPalette)
+ background(currentPalette)
 })
 
 newPaletteBtn.addEventListener('click', function() {
-  testFunction(loadPalette)
-  changeHex(loadPalette)
-  background(loadPalette)
+  testFunction(currentPalette)
+  changeHex(currentPalette)
+  background(currentPalette)
 })
 
 var itemInput = document.querySelector('.color-swatch')
@@ -40,6 +39,8 @@ itemInput.addEventListener('click', clickEvent2);
 itemInput.addEventListener('click', clickEvent3);
 itemInput.addEventListener('click', clickEvent4);
 itemInput.addEventListener('click', clickEvent5);
+
+
 
 var box2Lock = [
   'lock lock2',
@@ -108,7 +109,7 @@ function clickEvent4(event) {
   }
 }
 }
-//
+
 var box5Lock = [
   'lock lock5',
   'unlock unlock5',
@@ -126,13 +127,11 @@ var box5Lock = [
 }
 }
 
-fiveHexCodes.push(newColorArray)
-
-function hide(element) {
+function hide(element1) {
   element.classList.add('hidden')
 }
 
-function show(element) {
+function show(element1) {
   element.classList.remove('hidden')
 }
 
