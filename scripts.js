@@ -3,11 +3,11 @@ var color2 = document.querySelector('#color2');
 var color3 = document.querySelector('#color3');
 var color4 = document.querySelector('#color4');
 var color5 = document.querySelector('#color5');
-var test = document.querySelector('.hex1');
-var test2 = document.querySelector('.hex2');
-var test3 = document.querySelector('.hex3');
-var test4 = document.querySelector('.hex4');
-var test5 = document.querySelector('.hex5');
+var hex1 = document.querySelector('.hex1');
+var hex2 = document.querySelector('.hex2');
+var hex3 = document.querySelector('.hex3');
+var hex4 = document.querySelector('.hex4');
+var hex5 = document.querySelector('.hex5');
 var unlockBtn1 = document.querySelector('.unlock1');
 var unlockBtn2 = document.querySelector('.unlock2');
 var unlockBtn3 = document.querySelector('.unlock3');
@@ -30,7 +30,7 @@ itemInput.addEventListener('click', clickEvent4);
 itemInput.addEventListener('click', clickEvent5);
 
 function displayNewColors() {
-  testFunction(currentPalette)
+  currentPalette.accessColor()
   changeHex(currentPalette)
   background(currentPalette)
 }
@@ -132,22 +132,18 @@ function getRandomIndex(hexCodeArray) {
   return Math.floor(Math.random() * hexCodeArray.length);
 }
 
-function testFunction(element, string) {
-  element.accessColor(string)
+function changeHex(currentPalette) {
+  hex1.innerText = currentPalette.colorPalette[0]
+  hex2.innerText = currentPalette.colorPalette[1]
+  hex3.innerText = currentPalette.colorPalette[2]
+  hex4.innerText = currentPalette.colorPalette[3]
+  hex5.innerText = currentPalette.colorPalette[4]
 }
 
-function changeHex(element) {
-  test.innerText = element.colorPalette[0]
-  test2.innerText = element.colorPalette[1]
-  test3.innerText = element.colorPalette[2]
-  test4.innerText = element.colorPalette[3]
-  test5.innerText = element.colorPalette[4]
-}
-
-function background(element) {
-  color1.style.backgroundColor = element.colorPalette[0]
-  color2.style.backgroundColor = element.colorPalette[1]
-  color3.style.backgroundColor = element.colorPalette[2]
-  color4.style.backgroundColor = element.colorPalette[3]
-  color5.style.backgroundColor = element.colorPalette[4]
+function background(currentPalette) {
+  color1.style.backgroundColor = currentPalette.colorPalette[0]
+  color2.style.backgroundColor = currentPalette.colorPalette[1]
+  color3.style.backgroundColor = currentPalette.colorPalette[2]
+  color4.style.backgroundColor = currentPalette.colorPalette[3]
+  color5.style.backgroundColor = currentPalette.colorPalette[4]
 }
