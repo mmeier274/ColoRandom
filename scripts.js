@@ -1,132 +1,162 @@
-var hexCodeArray = ['A','B','C','D','E','F','0','1',
-'2','3','4','5','6','7','8','9']
-
 var color1 = document.querySelector('#color1');
 var color2 = document.querySelector('#color2');
 var color3 = document.querySelector('#color3');
 var color4 = document.querySelector('#color4');
 var color5 = document.querySelector('#color5');
+var test = document.querySelector('.hex1');
+var test2 = document.querySelector('.hex2');
+var test3 = document.querySelector('.hex3');
+var test4 = document.querySelector('.hex4');
+var test5 = document.querySelector('.hex5');
+var unlockBtn1 = document.querySelector('.unlock1');
+var unlockBtn2 = document.querySelector('.unlock2');
+var unlockBtn3 = document.querySelector('.unlock3');
+var unlockBtn4 = document.querySelector('.unlock4');
+var unlockBtn5 = document.querySelector('.unlock5');
+var lockBtn1 = document.querySelector('.lock1');
+var lockBtn2 = document.querySelector('.lock2');
+var lockBtn3 = document.querySelector('.lock3');
+var lockBtn4 = document.querySelector('.lock4');
+var lockBtn5 = document.querySelector('.lock5');
+var newPaletteBtn = document.querySelector('.new-pal-btn')
+var fiveHexCodes = [];
 
-class ColorArray {
-  constructor() {
-    this.ranHexCode = [];
-    this.counter = 0;
-    this.locked = false;
-  }
-  randomHex() {
-    var array = []
-    var hexcode = []
-    for (var i = 0; hexcode.length < 6; i++) {
-      this.counter ++
-      array = hexCodeArray[getRandomIndex(hexCodeArray)]
-      hexcode.push(array)
-    }
-    this.ranHexCode = hexcode.join('')
+window.addEventListener('load',function() {
+ testFunction(loadPalette)
+ changeHex(loadPalette)
+ background(loadPalette)
+})
+
+newPaletteBtn.addEventListener('click', function() {
+  testFunction(loadPalette)
+  changeHex(loadPalette)
+  background(loadPalette)
+})
+
+var itemInput = document.querySelector('.color-swatch')
+
+itemInput.addEventListener('click', clickEvent1);
+itemInput.addEventListener('click', clickEvent2);
+itemInput.addEventListener('click', clickEvent3);
+itemInput.addEventListener('click', clickEvent4);
+itemInput.addEventListener('click', clickEvent5);
+
+var box2Lock = [
+  'lock lock2',
+  'unlock unlock2',
+  'hex2',
+  'color color2'
+]
+
+function clickEvent2(event) {
+  mouseClick = event.target.className
+  for (var i = 0; i < box2Lock.length; i++) {
+  if (mouseClick === box2Lock[i]) {
+    lockBtn2.classList.remove('hidden')
+    unlockBtn2.classList.add('hidden')
   }
 }
+}
 
-var newColorArray = new ColorArray
-var newColorArray2 = new ColorArray
-var newColorArray3 = new ColorArray
-var newColorArray4 = new ColorArray
-var newColorArray5 = new ColorArray
+var box1Lock = [
+  'lock lock1',
+  'unlock unlock1',
+  'hex1',
+  'color color1'
+]
 
-var test = document.querySelector('.hex1')
-var test2 = document.querySelector('.hex2')
-var test3 = document.querySelector('.hex3')
-var test4 = document.querySelector('.hex4')
-var test5 = document.querySelector('.hex5')
+function clickEvent1(event) {
+  mouseClick = event.target.className
+  for (var i = 0; i < box1Lock.length; i++) {
+  if (mouseClick === box1Lock[i]) {
+    lockBtn1.classList.remove('hidden')
+    unlockBtn1.classList.add('hidden')
+  }
+}
+}
+
+var box3Lock = [
+  'lock lock3',
+  'unlock unlock3',
+  'hex3',
+  'color color3'
+]
+
+function clickEvent3(event) {
+  mouseClick = event.target.className
+  for (var i = 0; i < box3Lock.length; i++) {
+  if (mouseClick === box3Lock[i]) {
+    lockBtn3.classList.remove('hidden')
+    unlockBtn3.classList.add('hidden')
+  }
+}
+}
+
+var box4Lock = [
+  'lock lock4',
+  'unlock unlock4',
+  'hex4',
+  'color color4'
+]
+
+function clickEvent4(event) {
+  mouseClick = event.target.className
+  for (var i = 0; i < box4Lock.length; i++) {
+  if (mouseClick === box4Lock[i]) {
+    lockBtn4.classList.remove('hidden')
+    unlockBtn4.classList.add('hidden')
+  }
+}
+}
+//
+var box5Lock = [
+  'lock lock5',
+  'unlock unlock5',
+  'hex5',
+  'color color5'
+]
+
+ function clickEvent5(event) {
+  mouseClick = event.target.className
+  for (var i = 0; i < box5Lock.length; i++) {
+  if (mouseClick === box5Lock[i]) {
+    lockBtn5.classList.remove('hidden')
+    unlockBtn5.classList.add('hidden')
+  }
+}
+}
+
+fiveHexCodes.push(newColorArray)
+
+function hide(element) {
+  element.classList.add('hidden')
+}
+
+function show(element) {
+  element.classList.remove('hidden')
+}
 
 function getRandomIndex(hexCodeArray) {
   return Math.floor(Math.random() * hexCodeArray.length);
 }
 
-window.addEventListener('load',function() {
- testFunction()
-})
+function testFunction(element) {
+element.accessColor()
 
-function testFunction() {
-var loadPalette = new Palette;
-loadPalette.accessColor()
-loadPalette.addHastag()
-color1.style.backgroundColor = loadPalette.color1
-color2.style.backgroundColor = loadPalette.color2
-color3.style.backgroundColor = loadPalette.color3
-color4.style.backgroundColor = loadPalette.color4
-color5.style.backgroundColor = loadPalette.color5
-test.innerText = loadPalette.color1
-test2.innerText = loadPalette.color2
-test3.innerText = loadPalette.color3
-test4.innerText = loadPalette.color4
-test5.innerText = loadPalette.color5
 }
 
-function randomizeHex() {
-  one = newColorArray.ranHexCode
-  two = newColorArray2.ranHexCode
-  three = newColorArray3.ranHexCode
-  four = newColorArray4.ranHexCode
-  five = newColorArray5.ranHexCode
+function changeHex(element) {
+  test.innerText = element.colorPalette[0]
+  test2.innerText = element.colorPalette[1]
+  test3.innerText = element.colorPalette[2]
+  test4.innerText = element.colorPalette[3]
+  test5.innerText = element.colorPalette[4]
 }
 
-function changeHex() {
-  test.innerText = `#${one}`
-  test2.innerText = `#${two}`
-  test3.innerText = `#${three}`
-  test4.innerText = `#${four}`
-  test5.innerText = `#${five}`
-}
-
-function insertColor() {
-  color1.style.backgroundColor = test.innerText;
-  color2.style.backgroundColor = test2.innerText;
-  color3.style.backgroundColor = test3.innerText;
-  color4.style.backgroundColor = test4.innerText;
-  color5.style.backgroundColor = test5.innerText
-}
-
-function uniqueId() {
-  return Math.floor((Math.random() * 1000) + 1)
-}
-var palleteId;
-paletteId = uniqueId()
-class Palette {
-  constructor() {
-    this.color1 = color1
-    this.color2 = color2
-    this.color3 = color3
-    this.color4 = color4
-    this.color5 = color5
-    this.colorPalette =[]
-    this.uniqueId = paletteId
-  }
-  accessColor() {
-    var newColorArray = new ColorArray
-    var newColorArray2 = new ColorArray
-    var newColorArray3 = new ColorArray
-    var newColorArray4 = new ColorArray
-    var newColorArray5 = new ColorArray
-
-    newColorArray.randomHex()
-    this.color1 = newColorArray.ranHexCode
-
-    newColorArray2.randomHex()
-    this.color2 = newColorArray2.ranHexCode
-
-    newColorArray3.randomHex()
-    this.color3 = newColorArray3.ranHexCode
-
-    newColorArray4.randomHex()
-    this.color4 = newColorArray4.ranHexCode
-
-    newColorArray5.randomHex()
-    this.color5 = newColorArray5.ranHexCode
-  }
-  addHastag() {
-    this.color1 = `#${this.color1}`
-    this.color2 = `#${this.color2}`
-    this.color3 = `#${this.color3}`
-    this.color4 = `#${this.color4}`
-    this.color5 = `#${this.color5}`
-  }
+function background(element) {
+  color1.style.backgroundColor = element.colorPalette[0]
+  color2.style.backgroundColor = element.colorPalette[1]
+  color3.style.backgroundColor = element.colorPalette[2]
+  color4.style.backgroundColor = element.colorPalette[3]
+  color5.style.backgroundColor = element.colorPalette[4]
 }
