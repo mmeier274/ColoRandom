@@ -33,6 +33,7 @@ function displayNewColors() {
   currentPalette.accessColor()
   changeHex(currentPalette)
   background(currentPalette)
+  console.log(currentPalette)
 
   function checkLockPostion() {
     for (var i = 0; i <= 4; i++)
@@ -140,17 +141,17 @@ function getRandomIndex(hexCodeArray) {
 }
 
 function changeHex(currentPalette) {
-  hex1.innerText = currentPalette.colorPalette[0]
-  hex2.innerText = currentPalette.colorPalette[1]
-  hex3.innerText = currentPalette.colorPalette[2]
-  hex4.innerText = currentPalette.colorPalette[3]
-  hex5.innerText = currentPalette.colorPalette[4]
+  hex1.innerText = currentPalette.colorPalette[0].ranHexCode
+  hex2.innerText = currentPalette.colorPalette[1].ranHexCode
+  hex3.innerText = currentPalette.colorPalette[2].ranHexCode
+  hex4.innerText = currentPalette.colorPalette[3].ranHexCode
+  hex5.innerText = currentPalette.colorPalette[4].ranHexCode
 }
 
 function background(currentPalette) {
-  color1.style.backgroundColor = currentPalette.colorPalette[0]
-  color2.style.backgroundColor = currentPalette.colorPalette[1]
-  color3.style.backgroundColor = currentPalette.colorPalette[2]
-  color4.style.backgroundColor = currentPalette.colorPalette[3]
-  color5.style.backgroundColor = currentPalette.colorPalette[4]
+  color1.style.backgroundColor = currentPalette.colorPalette[0].ranHexCode
+  color2.style.backgroundColor = currentPalette.colorPalette[1].ranHexCode
+  color3.style.backgroundColor = currentPalette.colorPalette[2].ranHexCode
+  color4.style.backgroundColor = currentPalette.colorPalette[3].ranHexCode
+  color5.style.backgroundColor = currentPalette.colorPalette[4].ranHexCode
 }
