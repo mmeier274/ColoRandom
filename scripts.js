@@ -42,22 +42,12 @@ function displayNewColors() {
     }
   }
 }
+function hide(element) {
+  element.classList.add('hidden')
+}
 
-var box2Lock = [
-  'lock lock2',
-  'unlock unlock2',
-  'hex2',
-  'color color2'
-]
-
-function toggleLock2(event) {
-  mouseClick = event.target.className
-  for (var i = 0; i < box2Lock.length; i++) {
-    if (mouseClick === box2Lock[i]) {
-      lockBtn2.classList.remove('hidden')
-      unlockBtn2.classList.add('hidden')
-    }
-  }
+function show(element) {
+  element.classList.remove('hidden')
 }
 
 var box1Lock = [
@@ -71,8 +61,27 @@ function toggleLock(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box1Lock.length; i++) {
     if (mouseClick === box1Lock[i]) {
-      lockBtn1.classList.remove('hidden')
-      unlockBtn1.classList.add('hidden')
+      show(lockBtn1)
+      hide(unlockBtn1)
+      currentPalette.colorPalette[0].locked = true
+    }
+  }
+}
+
+var box2Lock = [
+  'lock lock2',
+  'unlock unlock2',
+  'hex2',
+  'color color2'
+]
+
+function toggleLock2(event) {
+  mouseClick = event.target.className
+  for (var i = 0; i < box2Lock.length; i++) {
+    if (mouseClick === box2Lock[i]) {
+      show(lockBtn2)
+      hide(unlockBtn2)
+      currentPalette.colorPalette[1].locked = true
     }
   }
 }
@@ -88,8 +97,9 @@ function toggleLock3(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box3Lock.length; i++) {
     if (mouseClick === box3Lock[i]) {
-      lockBtn3.classList.remove('hidden')
-      unlockBtn3.classList.add('hidden')
+      show(lockBtn3)
+      hide(unlockBtn3)
+      currentPalette.colorPalette[2].locked = true
     }
   }
 }
@@ -105,8 +115,9 @@ function toggleLock4(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box4Lock.length; i++) {
     if (mouseClick === box4Lock[i]) {
-      lockBtn4.classList.remove('hidden')
-      unlockBtn4.classList.add('hidden')
+      show(lockBtn4)
+      hide(unlockBtn4)
+      currentPalette.colorPalette[3].locked = true
     }
   }
 }
@@ -122,18 +133,11 @@ function toggleLock5(event) {
   mouseClick = event.target.className
   for (var i = 0; i < box5Lock.length; i++) {
     if (mouseClick === box5Lock[i]) {
-      lockBtn5.classList.remove('hidden')
-      unlockBtn5.classList.add('hidden')
+      show(lockBtn5)
+      hide(unlockBtn5)
+      currentPalette.colorPalette[4].locked = true
     }
   }
-}
-
-function hide(element1) {
-  element.classList.add('hidden')
-}
-
-function show(element1) {
-  element.classList.remove('hidden')
 }
 
 function getRandomIndex(hexCodeArray) {
