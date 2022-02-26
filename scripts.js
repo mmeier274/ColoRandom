@@ -30,18 +30,13 @@ itemInput.addEventListener('click', toggleLock4);
 itemInput.addEventListener('click', toggleLock5);
 
 function displayNewColors() {
+  // checkLockValue()
   currentPalette.accessColor()
   changeHex(currentPalette)
   background(currentPalette)
-  console.log(currentPalette)
 
-  function checkLockPostion() {
-    for (var i = 0; i <= 4; i++)
-    if (currentPalette.lockCheck[i] === false) {
-
-    }
-  }
 }
+
 function hide(element) {
   element.classList.add('hidden')
 }
@@ -140,11 +135,26 @@ function toggleLock5(event) {
   }
 }
 
+// function checkLockValue() {
+//   for (var i = 0; i <= 5; i++) {
+//     if (!currentPalette.colorPalette[i].locked) {
+//       // currentPalette.accessColor()
+//       // changeHex(currentPalette)
+//       // background(currentPalette)
+//     }
+//   }
+// }
+console.log(currentPalette);
+
 function getRandomIndex(hexCodeArray) {
   return Math.floor(Math.random() * hexCodeArray.length);
 }
-
+//
 function changeHex(currentPalette) {
+//   if (!currentPalette.colorPalette[0].locked) {
+//   }
+  // if (currentPalette.colorPalette[0].locked) {
+  //   hex1.innerText = currentPalette.colorPalette[0].ranHexCode
   hex1.innerText = currentPalette.colorPalette[0].ranHexCode
   hex2.innerText = currentPalette.colorPalette[1].ranHexCode
   hex3.innerText = currentPalette.colorPalette[2].ranHexCode
@@ -153,6 +163,8 @@ function changeHex(currentPalette) {
 }
 
 function background(currentPalette) {
+  // if (!currentPalette.colorPalette[0].locked) {
+  // }
   color1.style.backgroundColor = currentPalette.colorPalette[0].ranHexCode
   color2.style.backgroundColor = currentPalette.colorPalette[1].ranHexCode
   color3.style.backgroundColor = currentPalette.colorPalette[2].ranHexCode
