@@ -26,38 +26,18 @@ var palleteId;
 paletteId = uniqueId()
 
 var newColorArray = new ColorArray
-var newColorArray2 = new ColorArray
-var newColorArray3 = new ColorArray
-var newColorArray4 = new ColorArray
-var newColorArray5 = new ColorArray
 
 class Palette {
   constructor() {
-    this.color1 = color1
-    this.color2 = color2
-    this.color3 = color3
-    this.color4 = color4
-    this.color5 = color5
     this.colorPalette =[]
     this.uniqueId = paletteId
   }
   accessColor() {
-
+  for (var i = 0; i <= 4; i++) {
+    var newColorArray = new ColorArray
     newColorArray.randomHex()
-    this.color1 = newColorArray.ranHexCode
-
-    newColorArray2.randomHex()
-    this.color2 = newColorArray2.ranHexCode
-
-    newColorArray3.randomHex()
-    this.color3 = newColorArray3.ranHexCode
-
-    newColorArray4.randomHex()
-    this.color4 = newColorArray4.ranHexCode
-
-    newColorArray5.randomHex()
-    this.color5 = newColorArray5.ranHexCode
+    this.colorPalette.push(newColorArray.ranHexCode)
   }
 }
-
+}
 var loadPalette = new Palette;

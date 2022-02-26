@@ -125,12 +125,8 @@ var box5Lock = [
   }
 }
 }
+
 fiveHexCodes.push(newColorArray)
-fiveHexCodes.push(newColorArray2)
-fiveHexCodes.push(newColorArray3)
-fiveHexCodes.push(newColorArray4)
-fiveHexCodes.push(newColorArray5)
-console.log(fiveHexCodes);
 
 function hide(element) {
   element.classList.add('hidden')
@@ -150,17 +146,17 @@ element.accessColor()
 }
 
 function changeHex(element) {
-  test.innerText = element.color1
-  test2.innerText = element.color2
-  test3.innerText = element.color3
-  test4.innerText = element.color4
-  test5.innerText = element.color5
+  test.innerText = element.colorPalette[0]
+  test2.innerText = element.colorPalette[1]
+  test3.innerText = element.colorPalette[2]
+  test4.innerText = element.colorPalette[3]
+  test5.innerText = element.colorPalette[4]
 }
 
 function background(element) {
-  color1.style.backgroundColor = element.color1
-  color2.style.backgroundColor = element.color2
-  color3.style.backgroundColor = element.color3
-  color4.style.backgroundColor = element.color4
-  color5.style.backgroundColor = element.color5
+  color1.style.backgroundColor = element.colorPalette[0]
+  color2.style.backgroundColor = element.colorPalette[1]
+  color3.style.backgroundColor = element.colorPalette[2]
+  color4.style.backgroundColor = element.colorPalette[3]
+  color5.style.backgroundColor = element.colorPalette[4]
 }
