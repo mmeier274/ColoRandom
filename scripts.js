@@ -22,36 +22,29 @@ var newPaletteBtn = document.querySelector('.new-pal-btn')
 var itemInput = document.querySelector('.color-swatch')
 var savePaletteBtn = document.querySelector('.save-pal-btn')
 var savedPaletteImgs = document.querySelector('.color-array')
-
 var savedPaletteArray = []
 
 function addHtml() {
   savedPaletteImgs.innerHTML += `
   <section class='mini-palette'>
-    <div class='mini-color'>d</div>
-    <div class='mini-color'>d</div>
-    <div class='mini-color'>d</div>
-    <div class='mini-color'>d</div>
-    <div class='mini-color'>d</div>
+    <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[0].ranHexCode}'></div>
+    <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[1].ranHexCode}'></div>
+    <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[2].ranHexCode}'></div>
+    <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[3].ranHexCode}'></div>
+    <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[4].ranHexCode}'></div>
     <img class='trash' id='trash' src="./assets/trash.png"
   </section>
 `
 }
 
-function addMiniPalette() {
-  savedPaletteArray
-}
-
 savePaletteBtn.addEventListener('click', function() {
-savedPaletteArray.push(currentPalette)
+savedPaletteArray.unshift(currentPalette)
 addHtml()
-console.log(savedPaletteArray)
 })
 
 window.addEventListener('load', displayNewColors)
 newPaletteBtn.addEventListener('click', function() {
   displayNewColors()
-  currentPalette = new Palette
 })
 itemInput.addEventListener('click', toggleLock);
 itemInput.addEventListener('click', toggleLock2);

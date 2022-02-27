@@ -1,6 +1,6 @@
 class Palette {
   constructor() {
-    this.colorPalette =[]
+    this.colorPalette = []
     this.uniqueId = Date.now()
   }
 
