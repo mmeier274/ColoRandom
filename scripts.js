@@ -40,6 +40,7 @@ function addHtml() {
 savePaletteBtn.addEventListener('click', function() {
 savedPaletteArray.unshift(currentPalette)
 addHtml()
+  displayNewColors()
 })
 
 window.addEventListener('load', displayNewColors)
