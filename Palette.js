@@ -1,11 +1,10 @@
 class Palette {
   constructor() {
-    this.colorPalette =[]
+    this.colorPalette = []
     this.uniqueId = Date.now()
   }
 
   accessColor() {
-    console.log(this.colorPalette)
     if (!this.colorPalette[0]) {
       for (var i = 0; i <= 4; i++) {
         this.colorPalette.push(new Color)
