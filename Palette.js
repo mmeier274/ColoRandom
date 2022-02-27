@@ -15,7 +15,6 @@ class Palette {
         if (this.colorPalette[i].locked === false) {
         this.colorPalette.splice(i,1,new Color)
       }
-
     }
   }
 }

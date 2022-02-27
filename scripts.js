@@ -30,11 +30,9 @@ itemInput.addEventListener('click', toggleLock4);
 itemInput.addEventListener('click', toggleLock5);
 
 function displayNewColors() {
-  // checkLockValue()
   currentPalette.accessColor()
   changeHex(currentPalette)
   background(currentPalette)
-
 }
 
 function hide(element) {
@@ -45,116 +43,80 @@ function show(element) {
   element.classList.remove('hidden')
 }
 
-var box1Lock = [
-  'lock lock1',
-  'unlock unlock1',
-  'hex1',
-  'color color1'
-]
-
 function toggleLock(event) {
   mouseClick = event.target.className
-  for (var i = 0; i < box1Lock.length; i++) {
-    if (mouseClick === box1Lock[i]) {
+    if (mouseClick === 'unlock unlock1') {
       show(lockBtn1)
       hide(unlockBtn1)
       currentPalette.colorPalette[0].locked = true
     }
-  }
+    else if (mouseClick === 'lock lock1') {
+      show(unlockBtn1)
+      hide(lockBtn1)
+      currentPalette.colorPalette[0].locked = false
+    }
 }
-
-var box2Lock = [
-  'lock lock2',
-  'unlock unlock2',
-  'hex2',
-  'color color2'
-]
 
 function toggleLock2(event) {
   mouseClick = event.target.className
-  for (var i = 0; i < box2Lock.length; i++) {
-    if (mouseClick === box2Lock[i]) {
+    if (mouseClick === 'unlock unlock2') {
       show(lockBtn2)
       hide(unlockBtn2)
       currentPalette.colorPalette[1].locked = true
     }
-  }
+    else if (mouseClick === 'lock lock2') {
+      show(unlockBtn2)
+      hide(lockBtn2)
+      currentPalette.colorPalette[1].locked = false
+    }
 }
-
-var box3Lock = [
-  'lock lock3',
-  'unlock unlock3',
-  'hex3',
-  'color color3'
-]
 
 function toggleLock3(event) {
   mouseClick = event.target.className
-  for (var i = 0; i < box3Lock.length; i++) {
-    if (mouseClick === box3Lock[i]) {
+    if (mouseClick === 'unlock unlock3') {
       show(lockBtn3)
       hide(unlockBtn3)
       currentPalette.colorPalette[2].locked = true
     }
-  }
+    else if (mouseClick === 'lock lock3') {
+      show(unlockBtn3)
+      hide(lockBtn3)
+      currentPalette.colorPalette[2].locked = false
+    }
 }
-
-var box4Lock = [
-  'lock lock4',
-  'unlock unlock4',
-  'hex4',
-  'color color4'
-]
 
 function toggleLock4(event) {
   mouseClick = event.target.className
-  for (var i = 0; i < box4Lock.length; i++) {
-    if (mouseClick === box4Lock[i]) {
+    if (mouseClick === 'unlock unlock4') {
       show(lockBtn4)
       hide(unlockBtn4)
       currentPalette.colorPalette[3].locked = true
     }
-  }
+    else if (mouseClick === 'lock lock4') {
+      show(unlockBtn4)
+      hide(lockBtn4)
+      currentPalette.colorPalette[3].locked = false
+    }
 }
-
-var box5Lock = [
-  'lock lock5',
-  'unlock unlock5',
-  'hex5',
-  'color color5'
-]
 
 function toggleLock5(event) {
   mouseClick = event.target.className
-  for (var i = 0; i < box5Lock.length; i++) {
-    if (mouseClick === box5Lock[i]) {
+    if (mouseClick === 'unlock unlock5') {
       show(lockBtn5)
       hide(unlockBtn5)
       currentPalette.colorPalette[4].locked = true
     }
-  }
+    else if (mouseClick === 'lock lock5') {
+      show(unlockBtn5)
+      hide(lockBtn5)
+      currentPalette.colorPalette[4].locked = false
+    }
 }
-
-// function checkLockValue() {
-//   for (var i = 0; i <= 5; i++) {
-//     if (!currentPalette.colorPalette[i].locked) {
-//       // currentPalette.accessColor()
-//       // changeHex(currentPalette)
-//       // background(currentPalette)
-//     }
-//   }
-// }
-console.log(currentPalette);
 
 function getRandomIndex(hexCodeArray) {
   return Math.floor(Math.random() * hexCodeArray.length);
 }
-//
 function changeHex(currentPalette) {
-//   if (!currentPalette.colorPalette[0].locked) {
-//   }
-  // if (currentPalette.colorPalette[0].locked) {
-  //   hex1.innerText = currentPalette.colorPalette[0].ranHexCode
   hex1.innerText = currentPalette.colorPalette[0].ranHexCode
   hex2.innerText = currentPalette.colorPalette[1].ranHexCode
   hex3.innerText = currentPalette.colorPalette[2].ranHexCode
@@ -163,8 +125,6 @@ function changeHex(currentPalette) {
 }
 
 function background(currentPalette) {
-  // if (!currentPalette.colorPalette[0].locked) {
-  // }
   color1.style.backgroundColor = currentPalette.colorPalette[0].ranHexCode
   color2.style.backgroundColor = currentPalette.colorPalette[1].ranHexCode
   color3.style.backgroundColor = currentPalette.colorPalette[2].ranHexCode
