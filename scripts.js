@@ -20,9 +20,23 @@ var lockBtn4 = document.querySelector('.lock4');
 var lockBtn5 = document.querySelector('.lock5');
 var newPaletteBtn = document.querySelector('.new-pal-btn')
 var itemInput = document.querySelector('.color-swatch')
+var savePaletteBtn = document.querySelector('.save-pal-btn')
+var savedPaletteImgs = document.querySelector('.saved-paletes')
+
+savePaletteBtn.addEventListener('click', function() {
+
+
+})
+console.log(currentPalette)
+//click save palette btn to save palette
+//show palette in right window
+
 
 window.addEventListener('load', displayNewColors)
-newPaletteBtn.addEventListener('click', displayNewColors)
+newPaletteBtn.addEventListener('click', function() {
+  displayNewColors()
+  currentPalette.uniqueId = Date.now()
+})
 itemInput.addEventListener('click', toggleLock);
 itemInput.addEventListener('click', toggleLock2);
 itemInput.addEventListener('click', toggleLock3);
