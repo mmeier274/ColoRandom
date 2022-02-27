@@ -59,7 +59,8 @@ h1 {
   width: 100%;
   margin-top: 10px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
@@ -118,12 +119,12 @@ h1 {
   border: 2px solid blue;
 }
 
-.saved-paletes {
+/* .saved-paletes {
   border: 2px solid yellow;
   margin-top: 20px;
   height: 90%;
   width: 90%;
-}
+} */
 
 .hidden {
   display: none;
@@ -142,4 +143,28 @@ h1 {
   height: 25%;
   width: 15%;
   margin-top: 19%
+}
+
+/* MINI PALETTE */
+.mini-palette {
+  height: 30%;
+  width: 95%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: center;
+  border: 2px solid green
+}
+
+.mini-color {
+  height: 25%;
+  width: 15%;
+  border: 2px solid blue;
+}
+
+.trash {
+  height: 15%;
+  width: 10%;
+  border: 2px solid blue;
+  /* margin-top: % */
 }

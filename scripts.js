@@ -21,19 +21,32 @@ var lockBtn5 = document.querySelector('.lock5');
 var newPaletteBtn = document.querySelector('.new-pal-btn')
 var itemInput = document.querySelector('.color-swatch')
 var savePaletteBtn = document.querySelector('.save-pal-btn')
-var savedPaletteImgs = document.querySelector('.saved-paletes')
+var savedPaletteImgs = document.querySelector('.mini-palette')
 
-var testArray = []
+var savedPaletteArray = []
+
+function addHtml() {
+  savedPaletteImgs.innerHTML += `
+  <section class='mini-cover' id=${savedCovers[i].id}>
+  <img class='cover-image' src=${savedCovers[i].cover}>
+  <h2 class='cover-title'>${savedCovers[i].title}</h2>
+  <h3 class='tagline'>A tale of <span class="tagline-1">${savedCovers[i].tagline1}</span> and <span class="tagline-2">${savedCovers[i].tagline2}</span></h3>
+  <img class="price-tag" src="./assets/price.png">
+  <img class="overlay" src="./assets/overlay.png">
+  </section>`
+
+  console.log(savedPaletteArray)
+}
 
 savePaletteBtn.addEventListener('click', function() {
-testArray.push(currentPalette)
+savedPaletteArray.push(currentPalette)
+addHtml()
 })
 
 window.addEventListener('load', displayNewColors)
 newPaletteBtn.addEventListener('click', function() {
   displayNewColors()
   currentPalette = new Palette
-  console.log(currentPalette)
 })
 itemInput.addEventListener('click', toggleLock);
 itemInput.addEventListener('click', toggleLock2);
