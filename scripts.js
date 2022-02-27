@@ -35,87 +35,59 @@ function displayNewColors() {
   background(currentPalette)
 }
 
-function hide(element) {
-  element.classList.add('hidden')
-}
-
-function show(element) {
-  element.classList.remove('hidden')
+function toggle(element) {
+  element.classList.toggle('hidden')
 }
 
 function toggleLock(event) {
   mouseClick = event.target.className
-    if (mouseClick === 'unlock unlock1') {
-      show(lockBtn1)
-      hide(unlockBtn1)
-      currentPalette.colorPalette[0].locked = true
-    }
-    else if (mouseClick === 'lock lock1') {
-      show(unlockBtn1)
-      hide(lockBtn1)
-      currentPalette.colorPalette[0].locked = false
-    }
+  if (mouseClick === 'color color1') {
+    toggle(lockBtn1)
+    toggle(unlockBtn1);
+    currentPalette.colorPalette[0].locked = !currentPalette.colorPalette[0].locked
+  }
 }
 
 function toggleLock2(event) {
   mouseClick = event.target.className
-    if (mouseClick === 'unlock unlock2') {
-      show(lockBtn2)
-      hide(unlockBtn2)
-      currentPalette.colorPalette[1].locked = true
-    }
-    else if (mouseClick === 'lock lock2') {
-      show(unlockBtn2)
-      hide(lockBtn2)
-      currentPalette.colorPalette[1].locked = false
-    }
+  if (mouseClick === 'color color2') {
+    toggle(lockBtn2)
+    toggle(unlockBtn2)
+    currentPalette.colorPalette[1].locked = !currentPalette.colorPalette[1].locked
+}
 }
 
 function toggleLock3(event) {
   mouseClick = event.target.className
-    if (mouseClick === 'unlock unlock3') {
-      show(lockBtn3)
-      hide(unlockBtn3)
-      currentPalette.colorPalette[2].locked = true
-    }
-    else if (mouseClick === 'lock lock3') {
-      show(unlockBtn3)
-      hide(lockBtn3)
-      currentPalette.colorPalette[2].locked = false
-    }
-}
+  if (mouseClick === 'color color3') {
+    toggle(lockBtn3)
+    toggle(unlockBtn3)
+    currentPalette.colorPalette[2].locked = !currentPalette.colorPalette[2].locked
+  }
+  }
 
 function toggleLock4(event) {
   mouseClick = event.target.className
-    if (mouseClick === 'unlock unlock4') {
-      show(lockBtn4)
-      hide(unlockBtn4)
-      currentPalette.colorPalette[3].locked = true
-    }
-    else if (mouseClick === 'lock lock4') {
-      show(unlockBtn4)
-      hide(lockBtn4)
-      currentPalette.colorPalette[3].locked = false
-    }
+  if (mouseClick === 'color color4') {
+    toggle(lockBtn4)
+    toggle(unlockBtn4)
+    currentPalette.colorPalette[3].locked = !currentPalette.colorPalette[3].locked
+  }
 }
 
 function toggleLock5(event) {
   mouseClick = event.target.className
-    if (mouseClick === 'unlock unlock5') {
-      show(lockBtn5)
-      hide(unlockBtn5)
-      currentPalette.colorPalette[4].locked = true
-    }
-    else if (mouseClick === 'lock lock5') {
-      show(unlockBtn5)
-      hide(lockBtn5)
-      currentPalette.colorPalette[4].locked = false
-    }
+  if (mouseClick === 'color color5') {
+    toggle(lockBtn5)
+    toggle(unlockBtn5)
+    currentPalette.colorPalette[4].locked = !currentPalette.colorPalette[4].locked
+  }
 }
 
 function getRandomIndex(hexCodeArray) {
   return Math.floor(Math.random() * hexCodeArray.length);
 }
+
 function changeHex(currentPalette) {
   hex1.innerText = currentPalette.colorPalette[0].ranHexCode
   hex2.innerText = currentPalette.colorPalette[1].ranHexCode
