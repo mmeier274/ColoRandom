@@ -22,6 +22,8 @@ var newPaletteBtn = document.querySelector('.new-pal-btn')
 var itemInput = document.querySelector('.color-swatch')
 var savePaletteBtn = document.querySelector('.save-pal-btn')
 var savedPaletteImgs = document.querySelector('.color-array')
+var unlockBtnAll = document.querySelectorAll('.unlock')
+var lockBtnAll = document.querySelectorAll('.lock')
 var savedPaletteArray = []
 
 function addHtml() {
@@ -38,20 +40,35 @@ function addHtml() {
 }
 
 savePaletteBtn.addEventListener('click', function() {
-savedPaletteArray.unshift(currentPalette)
-addHtml()
+  pushColorArray()
+  addHtml()
+  brandNewPalette()
   displayNewColors()
 })
 
 window.addEventListener('load', displayNewColors)
+
 newPaletteBtn.addEventListener('click', function() {
   displayNewColors()
 })
+
 itemInput.addEventListener('click', toggleLock);
 itemInput.addEventListener('click', toggleLock2);
 itemInput.addEventListener('click', toggleLock3);
 itemInput.addEventListener('click', toggleLock4);
 itemInput.addEventListener('click', toggleLock5);
+
+function brandNewPalette() {
+  currentPalette = new Palette
+  for (var i = 0; i <= 4; i++) {
+    hide(lockBtnAll[i])
+    show(unlockBtnAll[i])
+  }
+}
+
+function pushColorArray() {
+  savedPaletteArray.unshift(currentPalette)
+}
 
 function displayNewColors() {
   currentPalette.accessColor()
@@ -63,11 +80,19 @@ function toggle(element) {
   element.classList.toggle('hidden')
 }
 
+function hide(element) {
+  element.classList.add('hidden')
+}
+
+function show(element) {
+  element.classList.remove('hidden')
+}
+
 function toggleLock(event) {
   mouseClick = event.target.className
   if (mouseClick === 'color color1') {
     toggle(lockBtn1)
-    toggle(unlockBtn1);
+    toggle(unlockBtn1)
     currentPalette.colorPalette[0].locked = !currentPalette.colorPalette[0].locked
   }
 }
@@ -78,7 +103,7 @@ function toggleLock2(event) {
     toggle(lockBtn2)
     toggle(unlockBtn2)
     currentPalette.colorPalette[1].locked = !currentPalette.colorPalette[1].locked
-}
+  }
 }
 
 function toggleLock3(event) {
@@ -88,7 +113,7 @@ function toggleLock3(event) {
     toggle(unlockBtn3)
     currentPalette.colorPalette[2].locked = !currentPalette.colorPalette[2].locked
   }
-  }
+}
 
 function toggleLock4(event) {
   mouseClick = event.target.className
