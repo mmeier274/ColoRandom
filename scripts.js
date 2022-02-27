@@ -23,19 +23,17 @@ var itemInput = document.querySelector('.color-swatch')
 var savePaletteBtn = document.querySelector('.save-pal-btn')
 var savedPaletteImgs = document.querySelector('.saved-paletes')
 
+var testArray = []
+
 savePaletteBtn.addEventListener('click', function() {
-
-
+testArray.push(currentPalette)
 })
-console.log(currentPalette)
-//click save palette btn to save palette
-//show palette in right window
-
 
 window.addEventListener('load', displayNewColors)
 newPaletteBtn.addEventListener('click', function() {
   displayNewColors()
-  currentPalette.uniqueId = Date.now()
+  currentPalette = new Palette
+  console.log(currentPalette)
 })
 itemInput.addEventListener('click', toggleLock);
 itemInput.addEventListener('click', toggleLock2);

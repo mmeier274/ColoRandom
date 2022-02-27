@@ -5,7 +5,6 @@ class Palette {
   }
 
   accessColor() {
-    console.log(this.colorPalette)
     if (!this.colorPalette[0]) {
       for (var i = 0; i <= 4; i++) {
         this.colorPalette.push(new Color)
