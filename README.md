@@ -8,45 +8,41 @@ To get started, users can click [here](https://mmeier274.github.io/ColoRandom/) 
 
 ## Local
 
-### To bring down to your local drive:
+#### To bring down to your local drive:
+
 - Open the terminal and run `git clone git@github.com:mmeier274/ColoRandom.git`
 - To see the project files, navigate to the ColoRandom directory and open the files in your text editor
 
-## Running the tests
+## Using the application
 
-Explain how to run the automated tests for this system
+#### To Randomize a New Palette
 
-### Break down into end to end tests
+- Open and run the application. Navigate to the "New Palette" button and click. This will load new colors.
 
-Explain what these tests test and why
+#### To Save a Palette
 
-```
-Give an example
-```
+- Navigate to the "Save Palette" button and click. This will save the palette and it can be view under the Saved Palettes column.
 
-### And coding style tests
+#### To Delete a Saved Palette
 
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+- You will first need to save a palette to be able to delete a palette. Once a palette is saved you will be able to delete it. To delete a palette navigate to the palette that is saved and click the trash can icon to the right of the palette.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
+- JavaScript
+- CSS
+- HTML
 
 ## Contributors
+
 - Nicholas Ao [aominhlong](https://github.com/aominhlong)
 - Shane Warning [shanekwarning](https://github.com/shanekwarning)
 - Matt Meier [mmeier274](https://github.com/mmeier274)
 
-## Versioning
+## Future Additions
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags).
+- Add ability for user to name their color palettes
+- When user clicks save palette will not randomize colors that were locked
+- Users can select individual colors from previously saved palettes to add to new palettes
+- Users can select a color saved color and edit the color intensity
+- Users can add display effects such as glitter, shading, etc.
