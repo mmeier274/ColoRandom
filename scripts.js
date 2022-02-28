@@ -38,6 +38,8 @@ function deletePalette() {
   for (var i=0; i<savedPaletteArray.length; i++) {
     if (itemToDelete === savedPaletteArray[i].uniqueId) {
       savedPaletteArray.splice(i,1)
+      event.target.parentElement.remove()
+      console.log(event.target.parentElement)
     }
   }
 }
