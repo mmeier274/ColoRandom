@@ -1,13 +1,7 @@
-var color1 = document.querySelector('#color1');
-var color2 = document.querySelector('#color2');
-var color3 = document.querySelector('#color3');
-var color4 = document.querySelector('#color4');
-var color5 = document.querySelector('#color5');
-var hex1 = document.querySelector('.hex1');
-var hex2 = document.querySelector('.hex2');
-var hex3 = document.querySelector('.hex3');
-var hex4 = document.querySelector('.hex4');
-var hex5 = document.querySelector('.hex5');
+var allColor = document.querySelectorAll('.color')
+var allHex = document.querySelectorAll('.hex')
+var lockBtnAll = document.querySelectorAll('.lock')
+var unlockBtnAll = document.querySelectorAll('.unlock')
 var unlockBtn1 = document.querySelector('.unlock1');
 var unlockBtn2 = document.querySelector('.unlock2');
 var unlockBtn3 = document.querySelector('.unlock3');
@@ -18,12 +12,10 @@ var lockBtn2 = document.querySelector('.lock2');
 var lockBtn3 = document.querySelector('.lock3');
 var lockBtn4 = document.querySelector('.lock4');
 var lockBtn5 = document.querySelector('.lock5');
-var newPaletteBtn = document.querySelector('.new-pal-btn')
 var itemInput = document.querySelector('.color-swatch')
-var savePaletteBtn = document.querySelector('.save-pal-btn')
 var savedPaletteImgs = document.querySelector('.color-array')
-var unlockBtnAll = document.querySelectorAll('.unlock')
-var lockBtnAll = document.querySelectorAll('.lock')
+var newPaletteBtn = document.querySelector('.new-pal-btn')
+var savePaletteBtn = document.querySelector('.save-pal-btn')
 var savedPaletteArray = []
 
 function addHtml() {
@@ -34,7 +26,7 @@ function addHtml() {
     <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[2].ranHexCode}'></div>
     <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[3].ranHexCode}'></div>
     <div class='mini-color' style='background-color: ${savedPaletteArray[0].colorPalette[4].ranHexCode}'></div>
-    <img class='trash' id='trash' src="./assets/trash.png"
+    <img class='trash' id='${savedPaletteArray[0].uniqueId}' src="./assets/trash.png"
   </section>
 `
 }
@@ -138,17 +130,13 @@ function getRandomIndex(hexCodeArray) {
 }
 
 function changeHex(currentPalette) {
-  hex1.innerText = currentPalette.colorPalette[0].ranHexCode
-  hex2.innerText = currentPalette.colorPalette[1].ranHexCode
-  hex3.innerText = currentPalette.colorPalette[2].ranHexCode
-  hex4.innerText = currentPalette.colorPalette[3].ranHexCode
-  hex5.innerText = currentPalette.colorPalette[4].ranHexCode
+  for (var i=0; i<=4; i++) {
+    allHex[i].innerText = currentPalette.colorPalette[i].ranHexCode
+  }
 }
 
 function background(currentPalette) {
-  color1.style.backgroundColor = currentPalette.colorPalette[0].ranHexCode
-  color2.style.backgroundColor = currentPalette.colorPalette[1].ranHexCode
-  color3.style.backgroundColor = currentPalette.colorPalette[2].ranHexCode
-  color4.style.backgroundColor = currentPalette.colorPalette[3].ranHexCode
-  color5.style.backgroundColor = currentPalette.colorPalette[4].ranHexCode
+  for (var i=0; i<=4; i++) {
+    allColor[i].style.backgroundColor = currentPalette.colorPalette[i].ranHexCode
+  }
 }
