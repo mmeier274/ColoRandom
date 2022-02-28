@@ -28,6 +28,7 @@ h1 {
 }
 
 .square-box {
+  background: linear-gradient(180deg, #f89464 30%, #82c8e4 70%);
   width: 75%
 }
 
