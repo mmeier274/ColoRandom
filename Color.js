@@ -3,7 +3,7 @@ class Color {
     this.ranHexCode = this.randomHex();
     this.locked = false;
   }
-  randomHex(close) {
+  randomHex() {
     var array = []
     var hexCodeArray = ['A','B','C','D','E','F','0','1',
     '2','3','4','5','6','7','8','9']
