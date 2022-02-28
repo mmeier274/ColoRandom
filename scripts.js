@@ -31,6 +31,19 @@ function addHtml() {
 `
 }
 
+savedPaletteImgs.addEventListener('click', deletePalette)
+
+function deletePalette() {
+  var itemToDelete = parseInt(event.target.id)
+  for (var i=0; i<savedPaletteArray.length; i++) {
+    if (itemToDelete === savedPaletteArray[i].uniqueId) {
+      savedPaletteArray.splice(i,1)
+      event.target.parentElement.remove()
+      console.log(event.target.parentElement)
+    }
+  }
+}
+
 savePaletteBtn.addEventListener('click', function() {
   pushColorArray()
   addHtml()
