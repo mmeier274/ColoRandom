@@ -2,7 +2,7 @@ var allColor = document.querySelectorAll('.color')
 var allHex = document.querySelectorAll('.hex')
 var lockBtnAll = document.querySelectorAll('.lock')
 var unlockBtnAll = document.querySelectorAll('.unlock')
-var itemInput = document.querySelector('.color-swatch')
+var lockBox = document.querySelector('.color-swatch')
 var savedPaletteImgs = document.querySelector('.color-array')
 var newPaletteBtn = document.querySelector('.new-pal-btn')
 var savePaletteBtn = document.querySelector('.save-pal-btn')
@@ -21,18 +21,13 @@ function addHtml() {
 `
 }
 
+window.addEventListener('load', displayNewColors)
+
 savedPaletteImgs.addEventListener('click', deletePalette)
 
-function deletePalette() {
-  var itemToDelete = parseInt(event.target.id)
-  for (var i = 0; i < savedPaletteArray.length; i++) {
-    if (itemToDelete === savedPaletteArray[i].uniqueId) {
-      savedPaletteArray.splice(i, 1)
-      event.target.parentElement.remove()
-      console.log(event.target.parentElement)
-    }
-  }
-}
+newPaletteBtn.addEventListener('click', displayNewColors)
+
+lockBox.addEventListener('click', toggleLock);
 
 savePaletteBtn.addEventListener('click', function() {
   pushColorArray()
@@ -40,14 +35,6 @@ savePaletteBtn.addEventListener('click', function() {
   brandNewPalette()
   displayNewColors()
 })
-
-window.addEventListener('load', displayNewColors)
-
-newPaletteBtn.addEventListener('click', function() {
-  displayNewColors()
-})
-
-itemInput.addEventListener('click', toggleLock);
 
 function brandNewPalette() {
   currentPalette = new Palette
@@ -65,6 +52,17 @@ function displayNewColors() {
   currentPalette.accessColor()
   changeHex(currentPalette)
   background(currentPalette)
+}
+
+function deletePalette() {
+  var itemToDelete = parseInt(event.target.id)
+  for (var i = 0; i < savedPaletteArray.length; i++) {
+    if (itemToDelete === savedPaletteArray[i].uniqueId) {
+      savedPaletteArray.splice(i, 1)
+      event.target.parentElement.remove()
+      console.log(event.target.parentElement)
+    }
+  }
 }
 
 function toggle(element) {
@@ -92,10 +90,6 @@ function toggleLock(event) {
   }
 }
 
-function getRandomIndex(hexCodeArray) {
-  return Math.floor(Math.random() * hexCodeArray.length);
-}
-
 function changeHex(currentPalette) {
   for (var i = 0; i <= 4; i++) {
     allHex[i].innerText = currentPalette.colorPalette[i].ranHexCode
@@ -106,4 +100,8 @@ function background(currentPalette) {
   for (var i = 0; i <= 4; i++) {
     allColor[i].style.backgroundColor = currentPalette.colorPalette[i].ranHexCode
   }
+}
+
+function getRandomIndex(hexCodeArray) {
+  return Math.floor(Math.random() * hexCodeArray.length);
 }
