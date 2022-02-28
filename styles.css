@@ -33,11 +33,7 @@ h1 {
 }
 
 .rectangle-box {
-  background: repeating-linear-gradient(
-      50deg,
-      black 0px,
-      white 60px
-    );
+  background-color: #fefaf4;
   display: flex;
 	flex-direction: column;
 	flex-wrap: nowrap;
@@ -49,6 +45,7 @@ h1 {
 
 .rectangle-title {
   background-color: #fefaf4;
+  font-size: 25px;
   width: 100%;
   height: 10%;
   margin-bottom: : 10px;
